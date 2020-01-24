@@ -1,0 +1,10 @@
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\bin\Debug\RestSharp.dll
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\bin\Debug\RestSharp.xml
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\obj\Debug\ClassLibrary.csprojAssemblyReference.cache
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\obj\Debug\ClassLibrary.csproj.CopyComplete
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\ClassLibrary\obj\Debug\ClassLibrary.pdb
