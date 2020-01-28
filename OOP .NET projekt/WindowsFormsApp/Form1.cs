@@ -14,8 +14,8 @@ namespace WindowsFormsApp
     public partial class Form1 : Form
     {
 
-        string path = Environment.CurrentDirectory + "/" + "lang.txt";
-        //string path = Directory.GetParent(Environment.CurrentDirectory).ToString() + "/" + "lang.txt";
+        //string path = Environment.CurrentDirectory + "/" + "lang.txt";
+        string path = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\lang.txt";
         public Form1()
         {
             InitializeComponent();

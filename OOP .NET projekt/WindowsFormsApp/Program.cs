@@ -21,7 +21,8 @@ namespace WindowsFormsApp
 
             //string hrvatski = "hr";
             //string engleski = "en-GB";
-            string path = Environment.CurrentDirectory + "/" + "lang.txt";
+            //string path = Environment.CurrentDirectory + "/" + "lang.txt";
+            string path = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\lang.txt";
             var language = ConfigurationManager.AppSettings["language"];
 
             if (!File.Exists(path))

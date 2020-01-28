@@ -19,8 +19,10 @@ namespace WindowsFormsApp
         public List<StartingEleven> ListaIgraca { get; set; }
         public List<IgracUC> ListaKontrolaIgraciToOmiljeni { get; set; }
         public List<IgracUC> ListaKontrolaOmiljeniToIgraci{ get; set; }
-        string path = Environment.CurrentDirectory + "/" + "favouritePlayers.txt";
-        string pathImg = Environment.CurrentDirectory + "/" + "playersImg.txt";
+        //string path = Environment.CurrentDirectory + "/" + "favouritePlayers.txt";
+        string path = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\favouritePlayers.txt";
+        string pathImg = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\playersImg.txt";
+        //string pathImg = Environment.CurrentDirectory + "/" + "playersImg.txt";
         Thread th;
         public Form3(List<StartingEleven> listaIgraca)
         {

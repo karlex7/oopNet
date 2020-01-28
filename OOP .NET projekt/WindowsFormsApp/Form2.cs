@@ -17,8 +17,11 @@ namespace WindowsFormsApp
 {
     public partial class Form2 : Form
     {
-        string path = Environment.CurrentDirectory + "/" + "fifaCode.txt";
-        string pathFavouritePlayers = Environment.CurrentDirectory + "/" + "favouritePlayers.txt";
+        //string path = Environment.CurrentDirectory + "/" + "fifaCode.txt";
+        string path = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\fifaCode.txt";
+        string pathFavouritePlayers = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\favouritePlayers.txt";
+        string pathImg = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\playersImg.txt";
+        //string pathFavouritePlayers = Environment.CurrentDirectory + "/" + "favouritePlayers.txt";
         public string savedFifaCode { get; set; }
         public string selectedFifaCode { get; set; }
         IRepo repo = RepoFactory.getRepo();
@@ -49,7 +52,10 @@ namespace WindowsFormsApp
             {
                 sw.WriteLine(cBItem.ToString());//
             }
-            checkIfCountryChanged();
+            if (savedFifaCode!=null)
+            {
+                checkIfCountryChanged();
+            }
             this.Close();
             th = new Thread(openNewForm);
             th.SetApartmentState(ApartmentState.STA);
@@ -89,6 +95,7 @@ namespace WindowsFormsApp
             if (!savedFifaCode.Equals(selectedFifaCode))
             {
                 deleteFavouritePlayers();
+                deleteSavedImg();
             }
         }
 
@@ -101,6 +108,17 @@ namespace WindowsFormsApp
             else
             {
                 File.Delete(pathFavouritePlayers);
+            }
+        }
+        private void deleteSavedImg()
+        {
+            if (!File.Exists(pathImg))
+            {
+                return;
+            }
+            else
+            {
+                File.Delete(pathImg);
             }
         }
 
