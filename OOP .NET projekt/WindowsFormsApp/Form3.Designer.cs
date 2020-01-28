@@ -36,13 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnOmiljeniToIgraci = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnRangListe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.AllowDrop = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // btnIgracToOmiljeni
@@ -54,8 +55,8 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.AllowDrop = true;
             resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.AllowDrop = true;
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // label1
@@ -82,10 +83,18 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnRangListe
+            // 
+            resources.ApplyResources(this.btnRangListe, "btnRangListe");
+            this.btnRangListe.Name = "btnRangListe";
+            this.btnRangListe.UseVisualStyleBackColor = true;
+            this.btnRangListe.Click += new System.EventHandler(this.btnRangListe_Click);
+            // 
             // Form3
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnRangListe);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOmiljeniToIgraci);
             this.Controls.Add(this.label2);
@@ -108,5 +117,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnOmiljeniToIgraci;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnRangListe;
     }
 }

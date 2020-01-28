@@ -34,6 +34,54 @@ namespace ClassLibrary
             return matches;
         }
 
+        public List<StartingEleven> GetGoalAndYellowStatisticForCountry(string fifa_code)
+        {
+            List<Match> matches = getMatchesForCountry(fifa_code);
+            List<TeamEvent> events = new List<TeamEvent>();
+            List<TeamEvent> temp = new List<TeamEvent>();
+            foreach (var match in matches)
+            {
+                if (match.HomeTeam.Code.Equals(fifa_code))
+                {
+                    temp = match.HomeTeamEvents;
+                    foreach (var item in temp)
+                    {
+                        events.Add(item);
+                    }
+                }
+                else
+                {
+                    temp = match.AwayTeamEvents;
+                    foreach (var item in temp)
+                    {
+                        events.Add(item);
+                    }
+                }
+
+
+            }
+
+            List<StartingEleven> startingElevens = GetStartingElevenForCountry(fifa_code);
+            foreach (TeamEvent item in events)
+            {
+                foreach (StartingEleven s in startingElevens)
+                {
+                    if (item.Player.Equals(s.Name))
+                    {
+                        if (item.TypeOfEvent == TypeOfEvent.Goal)
+                        {
+                            s.Golas++;
+                        }
+                        if (item.TypeOfEvent == TypeOfEvent.YellowCard || item.TypeOfEvent == TypeOfEvent.YellowCardSecond)
+                        {
+                            s.NumerOfYellowCards++;
+                        }
+                    }
+                }
+            }
+            return startingElevens;
+        }
+
         public List<Match> getMatchesForCountry(string fifa_code)
         {
             List<Match> allMatches = getAllMatches();

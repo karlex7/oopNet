@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +20,7 @@ namespace WindowsFormsApp
         public List<IgracUC> ListaKontrolaIgraciToOmiljeni { get; set; }
         public List<IgracUC> ListaKontrolaOmiljeniToIgraci{ get; set; }
         string path = Environment.CurrentDirectory + "/" + "favouritePlayers.txt";
+        Thread th;
         public Form3(List<StartingEleven> listaIgraca)
         {
             ListaIgraca = listaIgraca;
@@ -288,6 +290,18 @@ namespace WindowsFormsApp
                     sw.WriteLine(igrac.ToString());
                 }
             }
+        }
+
+        private void btnRangListe_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(openNewForm);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        private void openNewForm()
+        {
+            Application.Run(new Form4());
         }
     }
 }

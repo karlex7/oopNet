@@ -194,6 +194,10 @@ namespace ClassLibrary.MODEL
         public Position Position { get; set; }
         public int Golas { get; set; }
         public int NumerOfYellowCards { get; set; }
+        public override string ToString()
+        {
+            return Name + " | Goals: "+Golas;
+        }
     }
 
     public partial class Weather
