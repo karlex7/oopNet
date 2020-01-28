@@ -25,3 +25,4 @@ C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form3.en-GB.resources
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form4.resources
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.IgracStatistikaUC.resources

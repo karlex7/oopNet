@@ -68,7 +68,7 @@ namespace WindowsFormsApp
             CBItem cBItem = (CBItem)cbCountry.SelectedItem;
             string fifaCode = cBItem.getID();
 
-            Application.Run(new Form3(repo.GetStartingElevenForCountry(fifaCode)));
+            Application.Run(new Form3(fifaCode));
         }
 
         private void ucitajSpremljenuDrzavu()

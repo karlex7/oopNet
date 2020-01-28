@@ -16,6 +16,8 @@ namespace WindowsFormsApp
 {
     public partial class Form3 : Form
     {
+        IRepo repo = RepoFactory.getRepo();
+        public string Fifa_Code { get; set; }
         public List<StartingEleven> ListaIgraca { get; set; }
         public List<IgracUC> ListaKontrolaIgraciToOmiljeni { get; set; }
         public List<IgracUC> ListaKontrolaOmiljeniToIgraci{ get; set; }
@@ -24,9 +26,10 @@ namespace WindowsFormsApp
         string pathImg = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\playersImg.txt";
         //string pathImg = Environment.CurrentDirectory + "/" + "playersImg.txt";
         Thread th;
-        public Form3(List<StartingEleven> listaIgraca)
+        public Form3(string fifa_Code)
         {
-            ListaIgraca = listaIgraca;
+            Fifa_Code = fifa_Code;
+            ListaIgraca = repo.GetStartingElevenForCountry(fifa_Code);
             ListaKontrolaIgraciToOmiljeni = new List<IgracUC>();
             ListaKontrolaOmiljeniToIgraci = new List<IgracUC>();
             InitializeComponent();
@@ -385,7 +388,7 @@ namespace WindowsFormsApp
         }
         private void openNewForm()
         {
-            Application.Run(new Form4());
+            Application.Run(new Form4(Fifa_Code));
         }
     }
 }
