@@ -16,18 +16,28 @@ namespace WindowsFormsApp
         public string Broj { get; set; }
         public string Pozicija { get; set; }
         public Color ColorOfControl { get; set; }
-        public IgracUC(string ime, string broj, string pozicija)
+        public bool Cap { get; set; }
+        public IgracUC(string ime, string broj, string pozicija,bool cap)
         {
             InitializeComponent();
             Ime = ime;
             Broj = broj;
             Pozicija = pozicija;
+            Cap = cap;
         }
         public void loadData()
         {
             lbIme.Text = Ime;
             lbBroj.Text = Broj;
             lbPozicija.Text = Pozicija;
+            if (Cap)
+            {
+                lbKapetan.Text = "Kapetan";
+            }
+            else
+            {
+                lbKapetan.Text = "";
+            }
         }
         public void setHighlight()
         {

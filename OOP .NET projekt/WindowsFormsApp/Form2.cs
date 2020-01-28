@@ -18,6 +18,9 @@ namespace WindowsFormsApp
     public partial class Form2 : Form
     {
         string path = Environment.CurrentDirectory + "/" + "fifaCode.txt";
+        string pathFavouritePlayers = Environment.CurrentDirectory + "/" + "favouritePlayers.txt";
+        public string savedFifaCode { get; set; }
+        public string selectedFifaCode { get; set; }
         IRepo repo = RepoFactory.getRepo();
         Thread th;
         public Form2()
@@ -46,11 +49,13 @@ namespace WindowsFormsApp
             {
                 sw.WriteLine(cBItem.ToString());//
             }
+            checkIfCountryChanged();
             this.Close();
             th = new Thread(openNewForm);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+
 
         private void openNewForm()
         {
@@ -74,9 +79,37 @@ namespace WindowsFormsApp
                     string text = sr.ReadLine();
                     cbCountry.SelectedIndex = cbCountry.FindStringExact(text);
                     cbCountry.SelectedValue = text;
+                    savedFifaCode = text;
                 }
             }
                 
+        }
+        private void checkIfCountryChanged()
+        {
+            if (!savedFifaCode.Equals(selectedFifaCode))
+            {
+                deleteFavouritePlayers();
+            }
+        }
+
+        private void deleteFavouritePlayers()
+        {
+            if (!File.Exists(pathFavouritePlayers))
+            {
+                return;
+            }
+            else
+            {
+                File.Delete(pathFavouritePlayers);
+            }
+        }
+
+        private void cbCountry_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cmb = (ComboBox)sender;
+            int selectedIndex = cmb.SelectedIndex;
+            string selectedValue = cmb.Items[selectedIndex].ToString();
+            selectedFifaCode = selectedValue;
         }
     }
 }

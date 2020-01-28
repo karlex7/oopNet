@@ -45,6 +45,7 @@
             this.cbCountry.FormattingEnabled = true;
             resources.ApplyResources(this.cbCountry, "cbCountry");
             this.cbCountry.Name = "cbCountry";
+            this.cbCountry.SelectedIndexChanged += new System.EventHandler(this.cbCountry_SelectedIndexChanged);
             // 
             // button1
             // 

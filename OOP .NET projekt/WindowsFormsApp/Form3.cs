@@ -45,9 +45,9 @@ namespace WindowsFormsApp
                     {
                         string ime = sr.ReadLine();
                         StartingEleven s = GetStartingEleven(ime);
-                        IgracUC igrac = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString());
+                        IgracUC igrac = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString(),s.Captain);
                         igrac.Name = igrac.Ime;
-                        igrac.MouseDown += IgracUC_Mouse_Down_Igraci_To_Omiljeni;
+                        igrac.MouseDown += IgracUC_Mouse_Down_Omiljeni_To_Igraci;
                         igrac.loadData();
                         flowLayoutPanel2.Controls.Add(igrac);
                         flowLayoutPanel1.Controls.RemoveByKey(igrac.Name);
@@ -83,15 +83,17 @@ namespace WindowsFormsApp
         {
             string igracIme = e.Data.GetData(DataFormats.Text).ToString();
             StartingEleven s = GetStartingEleven(igracIme);
-            IgracUC igracUC = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString());
+            IgracUC igracUC = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString(),s.Captain);
             igracUC.Name = igracIme;
             igracUC.MouseDown += IgracUC_Mouse_Down_Omiljeni_To_Igraci;
             igracUC.loadData();
-
+            resetFLP1Colors();
+            resetFLP2Colors();
             flowLayoutPanel2.Controls.Add(igracUC);
             flowLayoutPanel1.Controls.RemoveByKey(igracIme);
 
-            ListaKontrolaIgraciToOmiljeni = new List<IgracUC>();
+            ListaKontrolaIgraciToOmiljeni.Clear();
+            ListaKontrolaOmiljeniToIgraci.Clear();
         }
 
         private void flp2_DragEnter(object sender, DragEventArgs e)
@@ -106,16 +108,33 @@ namespace WindowsFormsApp
         {
             string igracIme = e.Data.GetData(DataFormats.Text).ToString();
             StartingEleven s = GetStartingEleven(igracIme);
-            IgracUC igracUC = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString());
+            IgracUC igracUC = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString(),s.Captain);
             igracUC.Name = igracIme;
             igracUC.MouseDown += IgracUC_Mouse_Down_Igraci_To_Omiljeni;
             igracUC.loadData();
-
+            resetFLP1Colors();
+            resetFLP2Colors();
             flowLayoutPanel1.Controls.Add(igracUC);
             flowLayoutPanel2.Controls.RemoveByKey(igracIme);
 
-            ListaKontrolaOmiljeniToIgraci = new List<IgracUC>();
+            ListaKontrolaOmiljeniToIgraci.Clear();
+            ListaKontrolaIgraciToOmiljeni.Clear();
+        }
 
+        private void resetFLP1Colors()
+        {
+            foreach (IgracUC item in flowLayoutPanel1.Controls)
+            {
+                item.setNormalBackColor();
+            }
+        }
+
+        private void resetFLP2Colors()
+        {
+            foreach (IgracUC item in flowLayoutPanel2.Controls)
+            {
+                item.setNormalBackColor();
+            }
         }
 
         private void flp1_DragEnter(object sender, DragEventArgs e)
@@ -134,7 +153,7 @@ namespace WindowsFormsApp
 
             foreach (StartingEleven s in starting)
             {
-                IgracUC i = new IgracUC(s.Name,s.ShirtNumber.ToString(),s.Position.ToString());
+                IgracUC i = new IgracUC(s.Name,s.ShirtNumber.ToString(),s.Position.ToString(),s.Captain);
                 i.MouseDown += IgracUC_Mouse_Down_Igraci_To_Omiljeni;
                 i.Click += IgracUC_Click;
                 i.Name = s.Name;
@@ -167,13 +186,17 @@ namespace WindowsFormsApp
 
             //Fix ako dragamo jednoga igraca pa ga pokusamo prebaciti jos preko menija
             //dodati na button a ne tu
-            /*foreach (IgracUC i in flowLayoutPanel2.Controls)
+            if (flowLayoutPanel2.Controls!=null)
             {
-                if (i.Ime.Equals(premjestaj.Ime))
+                foreach (IgracUC i in flowLayoutPanel2.Controls)
                 {
-                    return;
+                    if (i.Ime.Equals(premjestaj.Ime))
+                    {
+                        return;
+                    }
                 }
-            }*/
+            }
+            
             ListaKontrolaIgraciToOmiljeni.Add(premjestaj);
         }
         private void IgracUC_Mouse_Down_Omiljeni_To_Igraci(object sender, MouseEventArgs e)
@@ -186,13 +209,23 @@ namespace WindowsFormsApp
             premjestaj.loadData();
 
             //Fix ako dragamo jednoga igraca pa ga pokusamo prebaciti jos preko menija
-           /* foreach (IgracUC i in flowLayoutPanel1.Controls)
+            /* foreach (IgracUC i in flowLayoutPanel1.Controls)
+             {
+                 if (i.Ime.Equals(premjestaj.Ime))
+                 {
+                     return;
+                 }
+             }*/
+            if (flowLayoutPanel1.Controls != null)
             {
-                if (i.Ime.Equals(premjestaj.Ime))
+                foreach (IgracUC i in flowLayoutPanel1.Controls)
                 {
-                    return;
+                    if (i.Ime.Equals(premjestaj.Ime))
+                    {
+                        return;
+                    }
                 }
-            }*/
+            }
             ListaKontrolaOmiljeniToIgraci.Add(premjestaj);
         }
         public StartingEleven GetStartingEleven(string name)
@@ -215,9 +248,9 @@ namespace WindowsFormsApp
             foreach (IgracUC igrac in ListaKontrolaIgraciToOmiljeni)
             {
                 StartingEleven s = GetStartingEleven(igrac.Ime);
-                IgracUC igracUC = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString());
+                IgracUC igracUC = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString(),s.Captain);
                 igracUC.Name = igracUC.Ime;
-                igracUC.MouseDown += IgracUC_Mouse_Down_Igraci_To_Omiljeni;
+                igracUC.MouseDown += IgracUC_Mouse_Down_Omiljeni_To_Igraci;//IgracUC_Mouse_Down_Igraci_To_Omiljeni;
                 igracUC.setNormalBackColor();
                 igracUC.loadData();
                 flowLayoutPanel2.Controls.Add(igracUC);
@@ -230,12 +263,13 @@ namespace WindowsFormsApp
 
         private void btnOmiljeniToIgraci_Click(object sender, EventArgs e)
         {
+
             foreach (IgracUC igrac in ListaKontrolaOmiljeniToIgraci)
             {
                 StartingEleven s = GetStartingEleven(igrac.Ime);
-                IgracUC igracUC = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString());
+                IgracUC igracUC = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString(),s.Captain);
                 igracUC.Name = igracUC.Ime;
-                igracUC.MouseDown += IgracUC_Mouse_Down_Omiljeni_To_Igraci;
+                igracUC.MouseDown += IgracUC_Mouse_Down_Igraci_To_Omiljeni;
                 igracUC.setNormalBackColor();
                 igracUC.loadData();
 
