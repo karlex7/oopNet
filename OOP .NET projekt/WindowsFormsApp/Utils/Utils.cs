@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClassLibrary;
+using ClassLibrary.MODEL;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -60,6 +62,21 @@ namespace WindowsFormsApp.Utils
 
             return lang;
 
+        }
+        public StartingEleven GetStartingEleven(string name)
+        {
+            StartingEleven startingEleven = new StartingEleven();
+            IRepo repo = RepoFactory.getRepo();
+            List<StartingEleven> list = repo.GetStartingElevenForCountry("USA");
+            foreach (StartingEleven item in list)
+            {
+                if (item.Name.Equals(name))
+                {
+                    startingEleven = item;
+                }
+            }
+
+            return startingEleven;
         }
     }
 }
