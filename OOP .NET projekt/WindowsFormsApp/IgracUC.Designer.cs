@@ -32,8 +32,8 @@
             this.lbBroj = new System.Windows.Forms.Label();
             this.lbPozicija = new System.Windows.Forms.Label();
             this.lbKapetan = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.slika = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.slika)).BeginInit();
             this.SuspendLayout();
             // 
             // lbIme
@@ -72,13 +72,15 @@
             this.lbKapetan.TabIndex = 3;
             this.lbKapetan.Text = "Kapetan";
             // 
-            // pictureBox1
+            // slika
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(19, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 58);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.slika.BackColor = System.Drawing.Color.Silver;
+            this.slika.Location = new System.Drawing.Point(14, 3);
+            this.slika.Name = "slika";
+            this.slika.Size = new System.Drawing.Size(58, 58);
+            this.slika.TabIndex = 4;
+            this.slika.TabStop = false;
+            this.slika.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // IgracUC
             // 
@@ -86,14 +88,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.slika);
             this.Controls.Add(this.lbKapetan);
             this.Controls.Add(this.lbPozicija);
             this.Controls.Add(this.lbBroj);
             this.Controls.Add(this.lbIme);
             this.Name = "IgracUC";
             this.Size = new System.Drawing.Size(522, 64);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slika)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +107,6 @@
         private System.Windows.Forms.Label lbBroj;
         private System.Windows.Forms.Label lbPozicija;
         private System.Windows.Forms.Label lbKapetan;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox slika;
     }
 }

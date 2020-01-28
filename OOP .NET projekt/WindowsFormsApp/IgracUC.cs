@@ -52,6 +52,23 @@ namespace WindowsFormsApp
             return Ime; 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog odabranaSlika = new OpenFileDialog();
+            odabranaSlika.Filter = "Slike|*.bmp;*.jpg;*.jpeg;*.png;|Sve datoteke|*.*";
+            odabranaSlika.InitialDirectory = Application.StartupPath;
 
+            if (odabranaSlika.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                PrikaziSliku(odabranaSlika.FileName, odabranaSlika.SafeFileName);
+            }
+        }
+
+        private void PrikaziSliku(string putanja, string datoteka)
+        {
+            slika.ImageLocation = putanja;
+            slika.Size = new Size(58, 58);
+            slika.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
     }
 }
