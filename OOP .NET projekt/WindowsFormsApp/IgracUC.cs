@@ -18,6 +18,7 @@ namespace WindowsFormsApp
         public Color ColorOfControl { get; set; }
         public bool Cap { get; set; }
         public string ImgPath { get; set; }
+        public string defaultImgPath { get; set; }
         public IgracUC(string ime, string broj, string pozicija,bool cap)
         {
             InitializeComponent();
@@ -25,6 +26,9 @@ namespace WindowsFormsApp
             Broj = broj;
             Pozicija = pozicija;
             Cap = cap;
+            defaultImgPath = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\player.jpg";
+            ImgPath = defaultImgPath;
+            PrikaziSliku(ImgPath,"");
         }
         public void loadData()
         {

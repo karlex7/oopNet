@@ -30,14 +30,24 @@ namespace WindowsFormsApp
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            PrikaziStatistiku();
+            PrikaziStatistikuZaIgrace();
+            PrikaziStatistikuZaUtakmice();
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.WrapContents = false;
             loadSlike();
         }
 
-        private void PrikaziStatistiku()
+        private void PrikaziStatistikuZaUtakmice()
+        {
+            List<Match> matches = repo.getMatchesForCountry(Fifa_Code);
+            foreach (Match item in matches)
+            {
+                listBox1.Items.Add(item.Location + "  -  " + item.Attendance + "  -  " + item.HomeTeamCountry + " vs " + item.AwayTeamCountry);
+            }
+        }
+
+        private void PrikaziStatistikuZaIgrace()
         {
             IRepo repo = RepoFactory.getRepo();
             List<StartingEleven> startingElevens = repo.GetGoalAndYellowStatisticForCountry(Fifa_Code);
