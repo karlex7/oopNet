@@ -17,6 +17,7 @@ namespace WindowsFormsApp
         public string Pozicija { get; set; }
         public Color ColorOfControl { get; set; }
         public bool Cap { get; set; }
+        public string ImgPath { get; set; }
         public IgracUC(string ime, string broj, string pozicija,bool cap)
         {
             InitializeComponent();
@@ -51,6 +52,15 @@ namespace WindowsFormsApp
         {
             return Ime; 
         }
+        public void setImgPath(string pathImg)
+        {
+            ImgPath = pathImg;
+            PrikaziSliku(ImgPath, "");
+        }
+        public string getImgPath()
+        {
+            return ImgPath;
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -61,6 +71,7 @@ namespace WindowsFormsApp
             if (odabranaSlika.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 PrikaziSliku(odabranaSlika.FileName, odabranaSlika.SafeFileName);
+                setImgPath(odabranaSlika.FileName);
             }
         }
 

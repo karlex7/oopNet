@@ -18,7 +18,7 @@ namespace WindowsFormsApp
         [STAThread]
         static void Main()
         {
-            
+
             //string hrvatski = "hr";
             //string engleski = "en-GB";
             string path = Environment.CurrentDirectory + "/" + "lang.txt";

@@ -15,6 +15,7 @@ namespace WindowsFormsApp
     {
 
         string path = Environment.CurrentDirectory + "/" + "lang.txt";
+        //string path = Directory.GetParent(Environment.CurrentDirectory).ToString() + "/" + "lang.txt";
         public Form1()
         {
             InitializeComponent();

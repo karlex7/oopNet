@@ -20,6 +20,7 @@ namespace WindowsFormsApp
         public List<IgracUC> ListaKontrolaIgraciToOmiljeni { get; set; }
         public List<IgracUC> ListaKontrolaOmiljeniToIgraci{ get; set; }
         string path = Environment.CurrentDirectory + "/" + "favouritePlayers.txt";
+        string pathImg = Environment.CurrentDirectory + "/" + "playersImg.txt";
         Thread th;
         public Form3(List<StartingEleven> listaIgraca)
         {
@@ -30,6 +31,56 @@ namespace WindowsFormsApp
             setupPanels();
             loadIgrace();
             loadFavoriti();
+            loadSlike();
+        }
+
+        private void loadSlike()
+        {
+            List<IgracUC> lista = new List<IgracUC>();
+            if (!File.Exists(pathImg))
+            {
+                return;
+            }
+            else
+            {
+                using (StreamReader sr = new StreamReader(pathImg))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string tekst = sr.ReadLine();
+                        string[] splitaniTekst = tekst.Split('|');
+                        StartingEleven s = GetStartingEleven(splitaniTekst[0]);
+                        IgracUC i = new IgracUC(s.Name, s.ShirtNumber.ToString(), s.Position.ToString(), s.Captain);
+                        i.setImgPath(splitaniTekst[1]);
+                        lista.Add(i);
+                    }
+                    ucitaneSlikePrikazi(lista);
+                }
+            }
+        }
+
+        private void ucitaneSlikePrikazi(List<IgracUC> lista)
+        {
+            foreach (IgracUC i in flowLayoutPanel1.Controls)
+            {
+                foreach (IgracUC j in lista)
+                {
+                    if (j.Ime.Equals(i.Ime))
+                    {
+                        i.setImgPath(j.getImgPath());
+                    }
+                }
+            }
+            foreach (IgracUC i in flowLayoutPanel2.Controls)
+            {
+                foreach (IgracUC j in lista)
+                {
+                    if (j.Ime.Equals(i.Ime))
+                    {
+                        i.setImgPath(j.getImgPath());
+                    }
+                }
+            }
         }
 
         private void loadFavoriti()
@@ -166,6 +217,7 @@ namespace WindowsFormsApp
                 flowLayoutPanel1.Controls.Add(item);
                 item.loadData();
             }
+            
 
         }
 
@@ -288,6 +340,36 @@ namespace WindowsFormsApp
                 foreach (IgracUC igrac in flowLayoutPanel2.Controls)
                 {
                     sw.WriteLine(igrac.ToString());
+                }
+            }
+            SpremiSlike();
+        }
+
+        private void SpremiSlike()
+        {
+            List<IgracUC> lista = new List<IgracUC>();
+            List<IgracUC> listaSaSlikama = new List<IgracUC>();
+            foreach (IgracUC i in flowLayoutPanel1.Controls)
+            {
+                lista.Add(i);
+            }
+            foreach (IgracUC i in flowLayoutPanel2.Controls)
+            {
+                lista.Add(i);
+            }
+
+            foreach (IgracUC i in lista)
+            {
+                if (i.ImgPath!=null)
+                {
+                    listaSaSlikama.Add(i);
+                }
+            }
+            using (StreamWriter sw = new StreamWriter(pathImg))
+            {
+                foreach (IgracUC igrac in listaSaSlikama)
+                {
+                    sw.WriteLine(igrac.Ime+"|"+igrac.ImgPath);
                 }
             }
         }
