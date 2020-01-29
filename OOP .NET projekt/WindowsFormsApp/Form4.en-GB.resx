@@ -119,39 +119,45 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 17</value>
+    <value>48, 17</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Players</value>
+    <value>Player</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 17</value>
+    <value>45, 17</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Favourite</value>
-  </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 29</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="btnRangListe.Text" xml:space="preserve">
-    <value>Rank List</value>
-  </data>
-  <data name="btnPostavke.Location" type="System.Drawing.Point, System.Drawing">
-    <value>630, 589</value>
-  </data>
-  <data name="btnPostavke.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 33</value>
-  </data>
-  <data name="btnPostavke.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Goals</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 69</value>
+    <value>87, 17</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
+    <value>Yellow cards</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 17</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Stadium</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 17</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Number of visitors</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 17</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Teams (Home vs. Away)</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 32</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
     <value>Loading...</value>
   </data>
 </root>

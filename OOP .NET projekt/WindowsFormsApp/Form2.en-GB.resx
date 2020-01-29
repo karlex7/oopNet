@@ -127,4 +127,10 @@
   <data name="button1.Text" xml:space="preserve">
     <value>Save your favorite team</value>
   </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 32</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
 </root>

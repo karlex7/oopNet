@@ -45,9 +45,9 @@
             // 
             // flowLayoutPanel1
             // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.AllowDrop = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // btnIgracToOmiljeni
@@ -59,8 +59,8 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.AllowDrop = true;
             resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.AllowDrop = true;
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // label1
@@ -103,9 +103,9 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.label3);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // label3

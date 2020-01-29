@@ -29,10 +29,30 @@ namespace WindowsFormsApp
         public Form2()
         {
             InitializeComponent();
-            ucitajDrzave();
-            ucitajSpremljenuDrzavu();
+            dohvatiDrzave();
+
+            //ucitajDrzave();
+            //ovo treba statiti tek kad se ucitaju drzave
+            //ucitajSpremljenuDrzavu();
         }
 
+        private async void dohvatiDrzave()
+        {
+            Task<List<Country>> task = new Task<List<Country>>(getajDrzave);//new Task<List<StartingEleven>>(repo.GetStartingElevenForCountry(fifa_Code));
+            task.Start();
+            List<Country> countries = await task;
+            foreach (Country c in countries)
+            {
+                cbCountry.Items.Add(new CBItem(c.CountryName + " (" + c.FifaCode + ")", c.FifaCode));
+            }
+            ucitajSpremljenuDrzavu();
+            panel1.Hide();
+        }
+
+        private List<Country> getajDrzave()
+        {
+            return repo.getAllCountries();
+        }
 
         private void ucitajDrzave()
         {

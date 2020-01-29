@@ -17,6 +17,7 @@ namespace WindowsFormsApp
     {
         public string Fifa_Code { get; set; }
         public List<StartingEleven> ListaIgraca { get; set; }
+        public List<Match> ListaUtakmica { get; set; }
         IRepo repo = RepoFactory.getRepo();
 
         string pathImg = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\playersImg.txt";
@@ -24,18 +25,49 @@ namespace WindowsFormsApp
         {
             InitializeComponent();
             Fifa_Code = fifa_Code;
-            ListaIgraca = repo.GetStartingElevenForCountry(Fifa_Code);
-            
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.WrapContents = false;
+
+            loadIgrace();
+            loadUtakmice();
+            //ListaIgraca = repo.GetStartingElevenForCountry(Fifa_Code);
+
+        }
+
+        private async void loadIgrace()
+        {
+            Task<List<StartingEleven>> task = new Task<List<StartingEleven>>(getStarting);//new Task<List<StartingEleven>>(repo.GetStartingElevenForCountry(fifa_Code));
+            task.Start();
+            ListaIgraca = await task;
+            PrikaziStatistikuZaIgrace();
+            loadSlike();
+        }
+
+        private List<StartingEleven> getStarting()
+        {
+            return repo.GetGoalAndYellowStatisticForCountry(Fifa_Code);
+        }
+        private async void loadUtakmice()
+        {
+            Task<List<Match>> task = new Task<List<Match>>(getMatches);//new Task<List<StartingEleven>>(repo.GetStartingElevenForCountry(fifa_Code));
+            task.Start();
+            ListaUtakmica = await task;
+            PrikaziStatistikuZaUtakmice();
+            panel1.Hide();
+        }
+
+        private List<Match> getMatches()
+        {
+            return repo.getMatchesForCountry(Fifa_Code);
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            PrikaziStatistikuZaIgrace();
-            PrikaziStatistikuZaUtakmice();
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.WrapContents = false;
-            loadSlike();
+            //PrikaziStatistikuZaIgrace();
+            //PrikaziStatistikuZaUtakmice();
+            
+            //loadSlike();
         }
 
         private void PrikaziStatistikuZaUtakmice()
@@ -49,8 +81,7 @@ namespace WindowsFormsApp
 
         private void PrikaziStatistikuZaIgrace()
         {
-            IRepo repo = RepoFactory.getRepo();
-            List<StartingEleven> startingElevens = repo.GetGoalAndYellowStatisticForCountry(Fifa_Code);
+            List<StartingEleven> startingElevens = ListaIgraca;
             List<IgracStatistikaUC> listaKontrola = new List<IgracStatistikaUC>();
             foreach (StartingEleven s in startingElevens)
             {
@@ -116,5 +147,6 @@ namespace WindowsFormsApp
 
             return startingEleven;
         }
+
     }
 }
