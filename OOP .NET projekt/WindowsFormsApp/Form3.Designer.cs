@@ -37,13 +37,14 @@
             this.btnOmiljeniToIgraci = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRangListe = new System.Windows.Forms.Button();
+            this.btnPostavke = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.AllowDrop = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // btnIgracToOmiljeni
@@ -55,8 +56,8 @@
             // 
             // flowLayoutPanel2
             // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.AllowDrop = true;
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // label1
@@ -90,10 +91,18 @@
             this.btnRangListe.UseVisualStyleBackColor = true;
             this.btnRangListe.Click += new System.EventHandler(this.btnRangListe_Click);
             // 
+            // btnPostavke
+            // 
+            resources.ApplyResources(this.btnPostavke, "btnPostavke");
+            this.btnPostavke.Name = "btnPostavke";
+            this.btnPostavke.UseVisualStyleBackColor = true;
+            this.btnPostavke.Click += new System.EventHandler(this.btnPostavke_Click);
+            // 
             // Form3
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnPostavke);
             this.Controls.Add(this.btnRangListe);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnOmiljeniToIgraci);
@@ -118,5 +127,6 @@
         private System.Windows.Forms.Button btnOmiljeniToIgraci;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnRangListe;
+        private System.Windows.Forms.Button btnPostavke;
     }
 }

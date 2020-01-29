@@ -69,7 +69,7 @@ namespace WindowsFormsApp
 
         private static bool loadLanguage()
         {
-            string path = Environment.CurrentDirectory + "/" + "lang.txt";
+            string path = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\lang.txt";
             string hrvatski = "hr";
             string engleski = "en-GB";
 

@@ -382,13 +382,26 @@ namespace WindowsFormsApp
         private void btnRangListe_Click(object sender, EventArgs e)
         {
             this.Close();
-            th = new Thread(openNewForm);
+            th = new Thread(openNewForm4);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
-        private void openNewForm()
+        private void openNewForm4()
         {
             Application.Run(new Form4(Fifa_Code));
+        }
+
+        private void btnPostavke_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(openNewForm5);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+
+        private void openNewForm5()
+        {
+            Application.Run(new Form5());
         }
     }
 }
