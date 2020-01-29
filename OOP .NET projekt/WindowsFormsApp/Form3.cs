@@ -29,14 +29,40 @@ namespace WindowsFormsApp
         public Form3(string fifa_Code)
         {
             Fifa_Code = fifa_Code;
-            ListaIgraca = repo.GetStartingElevenForCountry(fifa_Code);
+            //ListaIgraca = GetStartingElevenForCountry(fifa_Code);
             ListaKontrolaIgraciToOmiljeni = new List<IgracUC>();
             ListaKontrolaOmiljeniToIgraci = new List<IgracUC>();
             InitializeComponent();
             setupPanels();
+
+            GetStartingElevenForCountry(fifa_Code);
+            /*loadIgrace();
+            loadFavoriti();
+            loadSlike();*/
+        }
+
+        private void setupKadDoduPodaci()
+        {
             loadIgrace();
             loadFavoriti();
             loadSlike();
+        }
+
+        private async void GetStartingElevenForCountry(string fifa_Code)
+        {
+            Task<List<StartingEleven>> task = new Task<List<StartingEleven>>(getStarting);//new Task<List<StartingEleven>>(repo.GetStartingElevenForCountry(fifa_Code));
+            task.Start();
+            ListaIgraca = await task;
+            int i = ListaIgraca.Count;
+            setupKadDoduPodaci();
+        }
+
+        private List<StartingEleven> getStarting()
+        {
+            List<StartingEleven> lista = new List<StartingEleven>();
+            lista=repo.GetStartingElevenForCountry(Fifa_Code);
+            panel1.Hide();
+            return lista;
         }
 
         private void loadSlike()

@@ -38,6 +38,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRangListe = new System.Windows.Forms.Button();
             this.btnPostavke = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -98,10 +101,23 @@
             this.btnPostavke.UseVisualStyleBackColor = true;
             this.btnPostavke.Click += new System.EventHandler(this.btnPostavke_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label3);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
             // Form3
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPostavke);
             this.Controls.Add(this.btnRangListe);
             this.Controls.Add(this.btnSave);
@@ -112,6 +128,8 @@
             this.Controls.Add(this.btnIgracToOmiljeni);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form3";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +146,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnRangListe;
         private System.Windows.Forms.Button btnPostavke;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
     }
 }
