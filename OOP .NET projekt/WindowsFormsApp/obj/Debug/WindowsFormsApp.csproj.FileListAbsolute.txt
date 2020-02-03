@@ -14,10 +14,8 @@ C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form3.resources
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.IgracUC.resources
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.Properties.Resources.resources
-C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.Welcome.resources
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form1.en-GB.resources
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form2.en-GB.resources
-C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.Welcome.en-GB.resources
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\en-GB\WindowsFormsApp.resources.dll
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CopyComplete

@@ -96,6 +96,7 @@ namespace WindowsFormsApp
 
             if (!File.Exists(path))
             {
+                cbCountry.SelectedIndex = 0;
                 return;
             }
             else
