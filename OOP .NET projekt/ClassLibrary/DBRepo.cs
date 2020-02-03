@@ -34,9 +34,9 @@ namespace ClassLibrary
             return matches;
         }
 
-        public List<StartingEleven> GetGoalAndYellowStatisticForCountry(string fifa_code)
+        public List<StartingEleven> GetGoalAndYellowStatisticForCountry(string fifa_code, List<Match> matchs)
         {
-            List<Match> matches = getMatchesForCountry(fifa_code);
+            List<Match> matches = matchs;
             List<TeamEvent> events = new List<TeamEvent>();
             List<TeamEvent> temp = new List<TeamEvent>();
             foreach (var match in matches)

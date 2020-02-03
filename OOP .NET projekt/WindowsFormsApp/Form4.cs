@@ -29,8 +29,10 @@ namespace WindowsFormsApp
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.WrapContents = false;
 
-            loadIgrace();
+
             loadUtakmice();
+
+
             //ListaIgraca = repo.GetStartingElevenForCountry(Fifa_Code);
 
         }
@@ -42,11 +44,13 @@ namespace WindowsFormsApp
             ListaIgraca = await task;
             PrikaziStatistikuZaIgrace();
             loadSlike();
+
+            panel1.Hide();
         }
 
         private List<StartingEleven> getStarting()
         {
-            return repo.GetGoalAndYellowStatisticForCountry(Fifa_Code);
+            return repo.GetGoalAndYellowStatisticForCountry(Fifa_Code, ListaUtakmica);
         }
         private async void loadUtakmice()
         {
@@ -54,7 +58,8 @@ namespace WindowsFormsApp
             task.Start();
             ListaUtakmica = await task;
             PrikaziStatistikuZaUtakmice();
-            panel1.Hide();
+
+            loadIgrace();
         }
 
         private List<Match> getMatches()

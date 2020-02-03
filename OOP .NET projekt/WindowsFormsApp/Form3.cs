@@ -26,6 +26,7 @@ namespace WindowsFormsApp
         string pathImg = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\playersImg.txt";
         //string pathImg = Environment.CurrentDirectory + "/" + "playersImg.txt";
         Thread th;
+
         public Form3(string fifa_Code)
         {
             Fifa_Code = fifa_Code;
@@ -62,9 +63,9 @@ namespace WindowsFormsApp
             List<StartingEleven> lista = new List<StartingEleven>();
             lista=repo.GetStartingElevenForCountry(Fifa_Code);
             panel1.Hide();
+
             return lista;
         }
-
         private void loadSlike()
         {
             List<IgracUC> lista = new List<IgracUC>();
