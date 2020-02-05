@@ -25,3 +25,5 @@ C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\bin\Debug\Cl
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\bin\Debug\RestSharp.xml
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\bin\Debug\Newtonsoft.Json.xml
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window2.g.cs
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window2.baml

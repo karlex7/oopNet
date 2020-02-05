@@ -147,7 +147,14 @@ namespace WpfApp1
 
         private void btnShowFavourite_Click(object sender, RoutedEventArgs e)
         {
+            Window2 w2 = new Window2(getFifaCodeFromCBFavourite());
+            w2.Show();
+        }
 
+        private void btnShowOppoenet_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 w2 = new Window2(getFifaCodeFromCBOpponent());
+            w2.Show();
         }
     }
 }
