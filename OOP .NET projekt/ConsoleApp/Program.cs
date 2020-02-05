@@ -12,8 +12,13 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            DBRepo repo = new DBRepo();
-
+            IRepo repo = RepoFactory.getRepo();
+            Country c = repo.getStatisticForCountry("FRA");
+            Console.WriteLine("Golas: "+c.Goals);
+            Console.WriteLine("Golas recived: " + c.GoalsReceived);
+            Console.WriteLine("Wins: " + c.GamesWins);
+            Console.WriteLine("Loses: " + c.GamesLoses);
+            Console.WriteLine("Draw: " + c.GamesDraw);
         }
     }
 }

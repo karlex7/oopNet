@@ -8,7 +8,20 @@
         xmlns:language="clr-namespace:WpfApp1.Properties.Langs"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <Label Content="{x:Static language:Lang.jezik}"/>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="{x:Static language:Lang.omiljenaReprezentacija}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Left" Margin="10"/>
+        <ComboBox Name="cbFavourite" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="10" SelectionChanged="cbFavourite_SelectionChanged"></ComboBox>
+        <ComboBox Name="cbOpponent" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="10"></ComboBox>
+        <Button x:Name="btnShowFavourite" Grid.Column="0" Grid.Row="2" Content="{x:Static language:Lang.prikaziStatistiku}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnShowFavourite_Click"/>
     </Grid>
 </Window>

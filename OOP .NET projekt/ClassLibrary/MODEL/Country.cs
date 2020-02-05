@@ -32,6 +32,11 @@ namespace ClassLibrary.MODEL
 
         [JsonProperty("group_letter")]
         public string GroupLetter { get; set; }
+        public int GamesDraw { get; set; } = 0;
+        public int GamesWins { get; set; } = 0;
+        public int GamesLoses { get; set; } = 0;
+        public int Goals { get; set; } = 0;
+        public int GoalsReceived { get; set; } = 0;
     }
 
     public partial class Country

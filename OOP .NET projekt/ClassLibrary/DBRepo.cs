@@ -34,6 +34,19 @@ namespace ClassLibrary
             return matches;
         }
 
+        public Country getCountryByFifaCode(string fifa_code, List<Country> AllCountries)
+        {
+            List<Country> countries = AllCountries;
+            foreach (Country c in countries)
+            {
+                if (c.FifaCode==fifa_code)
+                {
+                    return c;
+                }
+            }
+            return null;
+        }
+
         public List<StartingEleven> GetGoalAndYellowStatisticForCountry(string fifa_code, List<Match> matchs)
         {
             List<Match> matches = matchs;
@@ -100,6 +113,26 @@ namespace ClassLibrary
             return matches;
         }
 
+        public List<Country> getOpponentCountry(string fifa_code, List<Country> AllCountries)
+        {
+            List<Country> listaProtivnika = new List<Country>();
+            List<Country> countries = AllCountries;
+            List<Match> listaUtakmiceZaDrzavu = getMatchesForCountry(fifa_code);
+            foreach (Match m in listaUtakmiceZaDrzavu)
+            {
+                if (m.HomeTeam.Code!=fifa_code)
+                {
+                    listaProtivnika.Add(getCountryByFifaCode(m.HomeTeam.Code, countries));
+                }
+                if (m.AwayTeam.Code != fifa_code)
+                {
+                    listaProtivnika.Add(getCountryByFifaCode(m.AwayTeam.Code, countries));
+                }
+            }
+
+            return listaProtivnika;
+        }
+
         public List<StartingEleven> GetStartingElevenForCountry(string fifa_code)
         {
             List<Match> matches = getMatchesForCountry(fifa_code);
@@ -132,6 +165,53 @@ namespace ClassLibrary
             
 
             return startingElevens;
+        }
+
+        public Country getStatisticForCountry(string fifa_code)
+        {
+            Country c = getCountryByFifaCode(fifa_code, getAllCountries());
+            List<Match> matches = getMatchesForCountry(fifa_code);
+            foreach (Match m in matches)
+            {
+                //golovi
+                if (m.HomeTeam.Code==fifa_code)
+                {
+                    c.Goals += (int)m.HomeTeam.Goals;
+                    c.GoalsReceived += (int)m.AwayTeam.Goals;
+                    if (m.HomeTeam.Goals>m.AwayTeam.Goals)
+                    {
+                        c.GamesWins++;
+                    }
+                    if (m.HomeTeam.Goals < m.AwayTeam.Goals)
+                    {
+                        c.GamesLoses++;
+                    }
+                    if (m.HomeTeam.Goals == m.AwayTeam.Goals)
+                    {
+                        c.GamesDraw++;
+                    }
+                }
+                if (m.AwayTeam.Code==fifa_code)
+                {
+                    c.Goals += (int)m.AwayTeam.Goals;
+                    c.GoalsReceived += (int)m.HomeTeam.Goals;
+                    if (m.HomeTeam.Goals < m.AwayTeam.Goals)
+                    {
+                        c.GamesWins++;
+                    }
+                    if (m.HomeTeam.Goals > m.AwayTeam.Goals)
+                    {
+                        c.GamesWins--;
+                    }
+                    if (m.HomeTeam.Goals == m.AwayTeam.Goals)
+                    {
+                        c.GamesDraw++;
+                    }
+                }
+
+            }
+
+            return c;
         }
     }
 }

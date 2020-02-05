@@ -79,6 +79,33 @@ namespace WpfApp1.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fifa kod.
+        /// </summary>
+        public static string fifaKod {
+            get {
+                return ResourceManager.GetString("fifaKod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Golovi.
+        /// </summary>
+        public static string golovi {
+            get {
+                return ResourceManager.GetString("golovi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GolRazlika.
+        /// </summary>
+        public static string golRazlika {
+            get {
+                return ResourceManager.GetString("golRazlika", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pozdrav.
         /// </summary>
         public static string hello {
@@ -102,6 +129,78 @@ namespace WpfApp1.Properties.Langs {
         public static string maliEkran {
             get {
                 return ResourceManager.GetString("maliEkran", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Naziv.
+        /// </summary>
+        public static string naziv {
+            get {
+                return ResourceManager.GetString("naziv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neodlucene.
+        /// </summary>
+        public static string neodlucene {
+            get {
+                return ResourceManager.GetString("neodlucene", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Omiljena reprezentacija.
+        /// </summary>
+        public static string omiljenaReprezentacija {
+            get {
+                return ResourceManager.GetString("omiljenaReprezentacija", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pobjede.
+        /// </summary>
+        public static string pobjede {
+            get {
+                return ResourceManager.GetString("pobjede", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Porazi.
+        /// </summary>
+        public static string porazi {
+            get {
+                return ResourceManager.GetString("porazi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prikazi Statistiku.
+        /// </summary>
+        public static string prikaziStatistiku {
+            get {
+                return ResourceManager.GetString("prikaziStatistiku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primljeni golovi.
+        /// </summary>
+        public static string primljeniGolovi {
+            get {
+                return ResourceManager.GetString("primljeniGolovi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistika.
+        /// </summary>
+        public static string statistika {
+            get {
+                return ResourceManager.GetString("statistika", resourceCulture);
             }
         }
         

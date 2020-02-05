@@ -123,6 +123,15 @@
   <data name="exit" xml:space="preserve">
     <value>Izlaz</value>
   </data>
+  <data name="fifaKod" xml:space="preserve">
+    <value>Fifa kod</value>
+  </data>
+  <data name="golovi" xml:space="preserve">
+    <value>Golovi</value>
+  </data>
+  <data name="golRazlika" xml:space="preserve">
+    <value>GolRazlika</value>
+  </data>
   <data name="hello" xml:space="preserve">
     <value>Pozdrav</value>
   </data>
@@ -131,6 +140,30 @@
   </data>
   <data name="maliEkran" xml:space="preserve">
     <value>Mali ekran</value>
+  </data>
+  <data name="naziv" xml:space="preserve">
+    <value>Naziv</value>
+  </data>
+  <data name="neodlucene" xml:space="preserve">
+    <value>Neodlucene</value>
+  </data>
+  <data name="omiljenaReprezentacija" xml:space="preserve">
+    <value>Omiljena reprezentacija</value>
+  </data>
+  <data name="pobjede" xml:space="preserve">
+    <value>Pobjede</value>
+  </data>
+  <data name="porazi" xml:space="preserve">
+    <value>Porazi</value>
+  </data>
+  <data name="prikaziStatistiku" xml:space="preserve">
+    <value>Prikazi Statistiku</value>
+  </data>
+  <data name="primljeniGolovi" xml:space="preserve">
+    <value>Primljeni golovi</value>
+  </data>
+  <data name="statistika" xml:space="preserve">
+    <value>Statistika</value>
   </data>
   <data name="velicinaEkrana" xml:space="preserve">
     <value>Velicina ekrana</value>
