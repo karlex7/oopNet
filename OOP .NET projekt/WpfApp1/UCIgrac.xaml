@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="WpfApp1.UCIgrac"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="tbIme" FontSize="10" TextWrapping="Wrap" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="60"></TextBlock>
+        <Button x:Name="btnPlayer" Grid.Row="1" Grid.Column="0" Width="25" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="btnPlayer_Click">
+        </Button>
+    </Grid>
+</UserControl>

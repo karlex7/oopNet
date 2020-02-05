@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfApp1.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Window3" Height="500" Width="900">
+    <Grid Background="Green">
+        <Canvas Width="800" Height="400" Margin="10"
+            ClipToBounds="True"
+            Background="Green"
+                Name="canvasPlay">
+            <Canvas.Resources>
+                <Style TargetType="Ellipse">
+                    <Setter Property="Stroke" Value="White"/>
+                    <Setter Property="StrokeThickness" Value="2"/>
+                </Style>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Stroke" Value="White"/>
+                    <Setter Property="StrokeThickness" Value="2"/>
+                </Style>
+            </Canvas.Resources>
+
+            <Ellipse Height="60"
+                 Width="60"
+                 Canvas.Left="370"
+                 Canvas.Top="180"
+                 />
+            <Line
+            Stroke="White"
+            StrokeThickness="2"
+            X1="400" X2="400"
+            Y1="0" Y2="400"/>
+
+            <!--Golovi -->
+            <Ellipse Height="40"
+                 Width="40"
+                 Canvas.Left="715"
+                 Canvas.Top="180"
+                 />
+            <Rectangle Width="66" Height="120"
+                    Canvas.Left="734"
+                    Canvas.Top="140"
+                   Fill="Green"
+                   />
+            <Ellipse Height="40"
+                 Width="40"
+                 Canvas.Left="45"
+                 Canvas.Top="180"
+                 />
+            <Rectangle Width="66" Height="120"
+                    Canvas.Left="0"
+                    Canvas.Top="140"
+                   Fill="Green"
+                   />
+
+
+
+            <Rectangle Height="400" Width="800"
+                   />
+            
+        </Canvas>
+    </Grid>
+</Window>

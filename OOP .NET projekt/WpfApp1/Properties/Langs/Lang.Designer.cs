@@ -61,6 +61,33 @@ namespace WpfApp1.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Broj.
+        /// </summary>
+        public static string broj {
+            get {
+                return ResourceManager.GetString("broj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Broj golova.
+        /// </summary>
+        public static string brojGolova {
+            get {
+                return ResourceManager.GetString("brojGolova", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Broj zutih.
+        /// </summary>
+        public static string brojZutih {
+            get {
+                return ResourceManager.GetString("brojZutih", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cijeli ekran.
         /// </summary>
         public static string cijeliEkran {
@@ -115,11 +142,29 @@ namespace WpfApp1.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ime.
+        /// </summary>
+        public static string ime {
+            get {
+                return ResourceManager.GetString("ime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Jezik.
         /// </summary>
         public static string jezik {
             get {
                 return ResourceManager.GetString("jezik", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kapetan.
+        /// </summary>
+        public static string kapetan {
+            get {
+                return ResourceManager.GetString("kapetan", resourceCulture);
             }
         }
         
@@ -174,6 +219,15 @@ namespace WpfApp1.Properties.Langs {
         public static string porazi {
             get {
                 return ResourceManager.GetString("porazi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pozicija.
+        /// </summary>
+        public static string pozicija {
+            get {
+                return ResourceManager.GetString("pozicija", resourceCulture);
             }
         }
         

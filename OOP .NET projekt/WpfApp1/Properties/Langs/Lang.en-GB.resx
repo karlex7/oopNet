@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="broj" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="brojGolova" xml:space="preserve">
+    <value>Goals</value>
+  </data>
+  <data name="brojZutih" xml:space="preserve">
+    <value>Yellow cards</value>
+  </data>
   <data name="cijeliEkran" xml:space="preserve">
     <value>Full screen</value>
   </data>
@@ -135,8 +144,14 @@
   <data name="hello" xml:space="preserve">
     <value>Hello</value>
   </data>
+  <data name="ime" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="jezik" xml:space="preserve">
     <value>Language</value>
+  </data>
+  <data name="kapetan" xml:space="preserve">
+    <value>Capetan</value>
   </data>
   <data name="maliEkran" xml:space="preserve">
     <value>Small screen</value>
@@ -155,6 +170,9 @@
   </data>
   <data name="porazi" xml:space="preserve">
     <value>Loses</value>
+  </data>
+  <data name="pozicija" xml:space="preserve">
+    <value>Postion</value>
   </data>
   <data name="prikaziStatistiku" xml:space="preserve">
     <value>Show Statistic</value>

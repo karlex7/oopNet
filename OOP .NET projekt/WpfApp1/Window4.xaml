@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp1.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        xmlns:language="clr-namespace:WpfApp1.Properties.Langs"
+        Title="Window4" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="{x:Static language:Lang.ime}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label Name="lblIme" Content="text" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center"/>
+
+        <Label Content="{x:Static language:Lang.broj}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label Name="lblBroj" Content="text" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center"/>
+
+        <Label Content="{x:Static language:Lang.pozicija}" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label Name="lblPozicija" Content="text" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center"/>
+
+        <Label Content="{x:Static language:Lang.kapetan}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label Name="lblKapetan" Content="text" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center"/>
+
+        <Label Content="{x:Static language:Lang.brojGolova}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label Name="lblBrojGolova" Content="text" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center"/>
+
+        <Label Content="{x:Static language:Lang.brojZutih}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <Label Name="lblBrojZutih" Content="text" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center"/>
+
+    </Grid>
+</Window>

@@ -27,3 +27,9 @@ C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\bin\Debug\Ne
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window2.g.cs
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window2.baml
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\UCIgrac.g.cs
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\UCIgrac.baml
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window3.g.cs
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window3.baml
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window4.g.cs
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window4.baml

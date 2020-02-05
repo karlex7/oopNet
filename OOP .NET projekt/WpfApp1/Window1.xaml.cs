@@ -25,10 +25,15 @@ namespace WpfApp1
     {
         string path = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\full.txt";
         string pathFavouriteNation = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\fifaCode.txt";
+        List<StartingEleven> away;
+        List<StartingEleven> home;
         IRepo repo = RepoFactory.getRepo();
         public string savedFifaCode { get; set; }
         public string selectedFifaCode { get; set; }
+        public Match Match { get; set; }
         List<Country> AllCountries;
+        string Home_Fifa_code;
+        string Away_Fifa_code;
         public Window1()
         {
             InitializeComponent();
@@ -44,6 +49,11 @@ namespace WpfApp1
                 setScreenSize();
             }
             dohvatiDrzave();
+
+            //StartingEleven s = new StartingEleven();
+            //s.Name = "Karlo";
+            //IgracUC.StartingEleven = s;
+            //IgracUC.loadData();
         }
 
         private async void dohvatiDrzave()
@@ -124,6 +134,8 @@ namespace WpfApp1
                 cbOpponent.Items.Add(c.CountryName + " (" + c.FifaCode + ")");
             }
             cbOpponent.SelectedIndex = 0;
+
+            //Prikazi mapu terena i igrace
         }
         private List<Country> getajProtivnike()
         {
@@ -155,6 +167,71 @@ namespace WpfApp1
         {
             Window2 w2 = new Window2(getFifaCodeFromCBOpponent());
             w2.Show();
+        }
+
+        private void btnTeren_Click(object sender, RoutedEventArgs e)
+        {
+            //List<StartingEleven> home = repo.GetStartingElevenForCountryNoSubs(getFifaCodeFromCBFavourite());
+            // repo.GetStartingElevenForCountryNoSubs(getFifaCodeFromCBOpponent());
+            Home_Fifa_code = getFifaCodeFromCBFavourite();
+            Away_Fifa_code = getFifaCodeFromCBOpponent();
+
+            dohvatiMatch();
+            dohvatihome();
+            dohvatiAway();
+            
+
+
+            //Window3 w3 = new Window3(home, away,Match);
+
+            //w3.Show();
+        }
+
+        private async void dohvatihome()
+        {
+            Task<List<StartingEleven>> task = new Task<List<StartingEleven>>(getstartingHome);//new Task<List<StartingEleven>>(repo.GetStartingElevenForCountry(fifa_Code));
+            task.Start();
+            home = await task;
+        }
+
+        private List<StartingEleven> getstartingHome()
+        {
+            return repo.GetStartingElevenForCountryNoSubs(Home_Fifa_code); 
+        }
+        private async void dohvatiAway()
+        {
+            Task<List<StartingEleven>> task = new Task<List<StartingEleven>>(getstartinhAway);//new Task<List<StartingEleven>>(repo.GetStartingElevenForCountry(fifa_Code));
+            task.Start();
+            away = await task;
+
+            Window3 w3 = new Window3(home, away, Match);
+
+            w3.Show();
+
+        }
+        private List<StartingEleven> getstartinhAway()
+        {
+            return repo.GetStartingElevenForCountryNoSubs(Away_Fifa_code);
+        }
+
+        private async void dohvatiMatch()
+        {
+            Task<Match> task = new Task<Match>(getajMatch);//new Task<List<StartingEleven>>(repo.GetStartingElevenForCountry(fifa_Code));
+            task.Start();
+            Match = await task;
+
+            //&panel1.Hide();
+        }
+        private Match getajMatch()
+        {
+            return repo.getMatchByFifaCode(Home_Fifa_code,Away_Fifa_code);
+        }
+
+        private void cbOpponent_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //
+            //dohvatiMatch();
+            //dohvatiMatch();
         }
     }
 }

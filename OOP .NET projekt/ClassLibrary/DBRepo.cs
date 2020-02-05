@@ -95,6 +95,23 @@ namespace ClassLibrary
             return startingElevens;
         }
 
+        public Match getMatchByFifaCode(string homeFifa_code, string awayFifa_code)
+        {
+            List<Match> matches = getMatchesForCountry(homeFifa_code);
+            foreach (Match m in matches)
+            {
+                if (m.HomeTeam.Code==homeFifa_code && m.AwayTeam.Code==awayFifa_code)
+                {
+                    return m;
+                }
+                else if (m.HomeTeam.Code==awayFifa_code && m.AwayTeam.Code==awayFifa_code)
+                {
+                    return m;
+                }
+            }
+            return null;
+        }
+
         public List<Match> getMatchesForCountry(string fifa_code)
         {
             List<Match> allMatches = getAllMatches();
@@ -163,6 +180,33 @@ namespace ClassLibrary
                 }
             }
             
+
+            return startingElevens;
+        }
+
+        public List<StartingEleven> GetStartingElevenForCountryNoSubs(string fifa_code)
+        {
+            List<Match> matches = getMatchesForCountry(fifa_code);
+
+            List<StartingEleven> startingElevens = new List<StartingEleven>();
+
+            Match m = matches[0];
+            if (m.HomeTeam.Code == fifa_code)
+            {
+                foreach (StartingEleven s in m.HomeTeamStatistics.StartingEleven)
+                {
+                    startingElevens.Add(s);
+                }
+                
+            }
+            else
+            {
+                foreach (StartingEleven s in m.AwayTeamStatistics.StartingEleven)
+                {
+                    startingElevens.Add(s);
+                }
+            }
+
 
             return startingElevens;
         }

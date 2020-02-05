@@ -66,11 +66,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Lang.en-GB.resx</DependentUpon>
     </Compile>
+    <Compile Include="UCIgrac.xaml.cs">
+      <DependentUpon>UCIgrac.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window3.xaml.cs">
+      <DependentUpon>Window3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window4.xaml.cs">
+      <DependentUpon>Window4.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -84,11 +93,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UCIgrac.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
