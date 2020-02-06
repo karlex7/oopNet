@@ -33,3 +33,5 @@ C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Wi
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window3.baml
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window4.g.cs
 C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\Window4.baml
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\animation.g.cs
+C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\WpfApp1\obj\Debug\animation.baml

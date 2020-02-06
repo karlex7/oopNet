@@ -20,6 +20,24 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Rectangle Name="animateRec" Width="250" Height="100" Panel.ZIndex="1" Fill="Red" Grid.ColumnSpan="2" Margin="271,22.2,272.6,17.8" Grid.Row="2" Grid.RowSpan="2">
+            <Rectangle.Triggers>
+                <EventTrigger RoutedEvent="Rectangle.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="animateRec"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1.0" To="0.0" Duration="0:0:0.3"
+                                             AutoReverse="True" RepeatBehavior="0:0:0.9"/>
+                            <DoubleAnimation Storyboard.TargetName="animateRec"
+                                             Storyboard.TargetProperty="Width"
+                                             From="250" To="0" Duration="0:0:0.3"
+                                             AutoReverse="True" RepeatBehavior="0:0:0.9"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Rectangle.Triggers>
+        </Rectangle>
 
         <Label Content="{x:Static language:Lang.ime}" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <Label Name="lblIme" Content="text" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Center"/>
