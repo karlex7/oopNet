@@ -173,12 +173,16 @@ namespace WpfApp1
         {
             //List<StartingEleven> home = repo.GetStartingElevenForCountryNoSubs(getFifaCodeFromCBFavourite());
             // repo.GetStartingElevenForCountryNoSubs(getFifaCodeFromCBOpponent());
-            Home_Fifa_code = getFifaCodeFromCBFavourite();
-            Away_Fifa_code = getFifaCodeFromCBOpponent();
-
-            dohvatiMatch();
-            dohvatihome();
-            dohvatiAway();
+            
+            if (cbOpponent.SelectedItem!=null)
+            {
+                Home_Fifa_code = getFifaCodeFromCBFavourite();
+                Away_Fifa_code = getFifaCodeFromCBOpponent();
+                dohvatiMatch();
+                dohvatihome();
+                dohvatiAway();
+            }
+            
             
 
 

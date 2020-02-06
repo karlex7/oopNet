@@ -1,6 +1,7 @@
 ﻿using ClassLibrary.MODEL;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace WpfApp1
     {
         public List<StartingEleven> HomeTeam { get; set; }
         public List<StartingEleven> AwayTeam { get; set; }
+        string path = @"C:\Users\FRIDAY\Documents\OPP .NET projekt\OOP .NET projekt\full.txt";
         public Match Match { get; set; }
         //private int widthCanvas = 800;
         private int heightCanvas = 400;
@@ -38,6 +40,35 @@ namespace WpfApp1
 
             LoadUCHomeTeam();
             LoadUCAwayTeam();
+            if (!File.Exists(path))
+            {
+                this.Hide();
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                setScreenSize();
+            }
+        }
+        private void setScreenSize()
+        {
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string text = sr.ReadLine();
+
+                if (text == "true")
+                {
+                    WindowState = WindowState.Maximized;
+                }
+                else
+                {
+                    WindowState = WindowState.Normal;
+                }
+
+
+            }
         }
 
         private void LoadUCAwayTeam()
