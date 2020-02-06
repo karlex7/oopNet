@@ -171,11 +171,17 @@
   <data name="porazi" xml:space="preserve">
     <value>Loses</value>
   </data>
+  <data name="postavke" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="pozicija" xml:space="preserve">
     <value>Postion</value>
   </data>
   <data name="prikaziStatistiku" xml:space="preserve">
     <value>Show Statistic</value>
+  </data>
+  <data name="prikaziTeren" xml:space="preserve">
+    <value>Show field</value>
   </data>
   <data name="primljeniGolovi" xml:space="preserve">
     <value>Received goals</value>

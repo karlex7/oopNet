@@ -24,8 +24,9 @@
         <ComboBox Name="cbOpponent" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Margin="10" SelectionChanged="cbOpponent_SelectionChanged"></ComboBox>
         <Button x:Name="btnShowFavourite" Grid.Column="0" Grid.Row="2" Content="{x:Static language:Lang.prikaziStatistiku}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnShowFavourite_Click" Padding="10"/>
         <Button x:Name="btnShowOppoenet" Grid.Column="1" Grid.Row="2" Content="{x:Static language:Lang.prikaziStatistiku}" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnShowOppoenet_Click" Padding="10"/>
-        <Button Content="Prikazi Teren" Name="btnTeren" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="btnTeren_Click"/>
-
+        <Button Content="{x:Static language:Lang.prikaziTeren}" Name="btnTeren" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="btnTeren_Click"/>
+        <Button Content="{x:Static language:Lang.postavke}" Name="btnPostavke" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Click="btnPostavke_Click"/>
+        
 
     </Grid>
 </Window>

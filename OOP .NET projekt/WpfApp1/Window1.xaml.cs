@@ -233,5 +233,11 @@ namespace WpfApp1
             //dohvatiMatch();
             //dohvatiMatch();
         }
+
+        private void btnPostavke_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Show();
+        }
     }
 }

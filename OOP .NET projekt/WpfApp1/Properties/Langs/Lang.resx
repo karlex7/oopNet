@@ -171,11 +171,17 @@
   <data name="porazi" xml:space="preserve">
     <value>Porazi</value>
   </data>
+  <data name="postavke" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
   <data name="pozicija" xml:space="preserve">
     <value>Pozicija</value>
   </data>
   <data name="prikaziStatistiku" xml:space="preserve">
     <value>Prikazi Statistiku</value>
+  </data>
+  <data name="prikaziTeren" xml:space="preserve">
+    <value>Prikazi teren</value>
   </data>
   <data name="primljeniGolovi" xml:space="preserve">
     <value>Primljeni golovi</value>

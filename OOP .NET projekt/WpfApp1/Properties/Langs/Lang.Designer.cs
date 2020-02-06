@@ -223,6 +223,15 @@ namespace WpfApp1.Properties.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Postavke.
+        /// </summary>
+        public static string postavke {
+            get {
+                return ResourceManager.GetString("postavke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pozicija.
         /// </summary>
         public static string pozicija {
@@ -237,6 +246,15 @@ namespace WpfApp1.Properties.Langs {
         public static string prikaziStatistiku {
             get {
                 return ResourceManager.GetString("prikaziStatistiku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prikazi teren.
+        /// </summary>
+        public static string prikaziTeren {
+            get {
+                return ResourceManager.GetString("prikaziTeren", resourceCulture);
             }
         }
         

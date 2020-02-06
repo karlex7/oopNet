@@ -67,5 +67,54 @@ namespace WpfApp1
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
         }
+
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+
+            if (e.Key==Key.Enter)
+            {
+                if (rbHr.IsChecked == true)
+                {
+                    Properties.Settings.Default.languageCode = "hr";
+                    using (StreamWriter sw = new StreamWriter(path))
+                    {
+                        sw.WriteLine("hr");
+                    }
+                }
+                else
+                {
+                    Properties.Settings.Default.languageCode = "en-GB";
+                    using (StreamWriter sw = new StreamWriter(path))
+                    {
+                        sw.WriteLine("en-GB");
+                    }
+                }
+                Properties.Settings.Default.Save();
+
+                if (rbFull.IsChecked == true)
+                {
+                    using (StreamWriter sw = new StreamWriter(pathScreen))
+                    {
+                        sw.WriteLine("true");
+                    }
+                }
+                else
+                {
+                    using (StreamWriter sw = new StreamWriter(pathScreen))
+                    {
+                        sw.WriteLine("false");
+                    }
+                }
+
+
+                System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+                Application.Current.Shutdown();
+            }
+            if (e.Key == Key.Escape)
+            {
+                this.Hide();
+            }
+        }
     }
 }
