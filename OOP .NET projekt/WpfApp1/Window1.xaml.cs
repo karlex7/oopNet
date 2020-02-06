@@ -236,10 +236,8 @@ namespace WpfApp1
 
         private void btnPostavke_Click(object sender, RoutedEventArgs e)
         {
-            //MainWindow mw = new MainWindow();
-            //mw.Show();
-            animation a = new animation();
-            a.Show();
+            MainWindow mw = new MainWindow();
+            mw.Show();
         }
     }
 }
